@@ -35,7 +35,11 @@ app.post('/message',function (req,res) {
 
     //Send a response
     res.status(200).send({});
+});
 
+app.post('/messages/clear',function(req,res){
+    messages=[];
+    res.status(200).send("Messages Cleared");
 });
 
 /**

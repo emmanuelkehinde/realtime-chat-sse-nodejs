@@ -8,8 +8,13 @@ app.factory('MessageService',['$http',function($http){
         return $http.post('/message', data, []);
     }
 
+    function clearMessages(){
+        return $http.post('/messages/clear', [], []);
+    }
+
     return {
-        sendMessage:sendMessage
+        sendMessage:sendMessage,
+        clearMessages:clearMessages
     }
 
 }]);
@@ -31,7 +36,12 @@ app.controller('ChatController',['MessageService','$scope', function(MessageServ
                     console.log(response.message);
                 });
         }
-    };
+    }
+
+    //Method called to clear messages
+    cc.clearMessages=function(){
+        MessageService.clearMessages();
+    }
 
     //SSE Handler
     if(typeof(EventSource) !== "undefined") {
