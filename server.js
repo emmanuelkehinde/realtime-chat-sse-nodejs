@@ -31,7 +31,8 @@ app.post('/message',function (req,res) {
     var name=req.body.sender;
 
     //Insert new message at index 0
-    messages.splice(0,0,{msg:m,sender:name});
+    // messages.splice(0,0,{msg:m,sender:name});
+    messages.push({msg:m,sender:name});
 
     //Send a response
     res.status(200).send({});

@@ -38,7 +38,7 @@ app.controller('ChatController',['MessageService','$scope', function(MessageServ
         var ev = new EventSource('/message/sse');
         //Event to listen to
         ev.addEventListener('new_message', function (event) {
-            $scope.messages=JSON.parse(event.data); //Use JSON.parse to get it well formatted for display
+            $scope.messages=JSON.parse(event.data).reverse(); //Use JSON.parse to get it well formatted for display
             $scope.$apply(); 
         })
     } else {
