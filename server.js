@@ -20,7 +20,6 @@ var messages=[];
 
 //Serve the Homepage
 app.get('/',function(req,res){
-    messages = [];
     res.sendFile(__dirname+ '/public/index.html');
 });
 

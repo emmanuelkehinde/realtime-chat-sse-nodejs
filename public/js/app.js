@@ -31,7 +31,6 @@ app.controller('ChatController',['MessageService','$scope', function(MessageServ
                     console.log(response.message);
                 });
         }
-        
     };
 
     //SSE Handler
